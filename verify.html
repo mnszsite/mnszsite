@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Verification</title>
+    <script>
+        let attempts = 0; // Variable to count attempts
+        const maxAttempts = 5; // Maximum allowed attempts
+
+        function getParameterByName(name) {
+            const url = window.location.href;
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            const regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            const results = regex.exec(url);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        function checkPassword() {
+            const correctPassword = getParameterByName('password'); // Correct password from URL
+            const userPassword = prompt("Please enter the password to upload your photos:");
+
+            // Check if the user clicked 'Cancel'
+            if (userPassword === null) {
+                window.location.href = "events.html"; // Redirect to events page if canceled
+                return; // Exit the function
+            }
+
+            attempts++; // Increment attempts
+
+            if (userPassword === correctPassword) {
+                const redirectLink = getParameterByName('link'); // Get redirect link from URL
+                window.location.href = redirectLink; // Redirect if the password is correct
+            } else {
+                if (attempts >= maxAttempts) {
+                    alert("Too many incorrect attempts. Redirecting back to the events page.");
+                    window.location.href = "events.html"; // Redirect to events page
+                } else {
+                    alert("Incorrect password. You have " + (maxAttempts - attempts) + " attempts left.");
+                    // Optionally, you can ask for the password again
+                    checkPassword(); // Ask for password again
+                }
+            }
+        }
+
+
+        window.onload = checkPassword;
+
+    </script>
+</head>
+<body>
+    <h1>Password Verification</h1>
+    <p>Please wait while we verify your access...</p>
+</body>
+</html>

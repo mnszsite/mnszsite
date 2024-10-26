@@ -1,0 +1,215 @@
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        width: 100%;
+    }
+    .nav-links {
+        max-height: 0; /* Hide nav-links by default */
+        overflow: hidden; /* Prevent showing extra content */
+        position: absolute;
+        top: 100px;
+        right: 0;
+        width: 100%;
+        background-color: var(--primary-bg);
+        padding: 0 10px; /* Adjust padding */
+        text-align: center;
+        flex-direction: column;
+        transition: max-height 0.5s ease; /* Smooth transition */
+        z-index: 1000; /* Ensure above other content */
+    }
+
+    .nav-links a{
+        font-size: xx-large;
+    }
+
+    .nav-links.active {
+        max-height: 400px; /* Enough height to show all links */
+    }
+
+    .logo img {
+        width: 94%;
+        margin-right: 20px; /* Adjust gap */
+    }
+
+    .burger {
+        display: flex; /* Show burger menu */
+        flex-direction: column;
+        cursor: pointer;
+        font-size: larger;
+        height: fit-content;
+    }
+
+    .burger div {
+        width: 40px;
+        height: 6px;
+        background: white;
+        margin: 4px 0;
+        transition: 0.3s;
+        margin-right: 6px;
+    }
+
+    .hero {
+        height: 55vh; /* Adjust height */
+        text-align: center; /* Center text */
+    }
+
+    .hero h1 {
+        font-size: 2em; /* Adjust title size */
+    }
+
+    .hero p {
+        font-size: 1.2em; /* Adjust subtitle size */
+        margin-bottom: 20px; /* Space below subtitle */
+    }
+
+    .cta-button {
+        margin-top: 100px;
+        padding: 12px 20px; /* Adjust button size */
+        font-size: 1em; /* Button text size */
+    }
+
+    .features {
+        flex-direction: row; /* Align items horizontally */
+        overflow-x: auto; /* Allow horizontal scrolling if needed */
+        background-color: rgba(0, 0, 0, 0.137);
+
+    }
+    .feature-items {
+        flex: 1 0 auto; /* Allow items to grow and shrink */
+        margin: 5px; /* Add margin for spacing */
+ 
+    }
+    .details {
+        display: none; /* Initially hidden */
+        width: 200px; /* Fill the width */
+        background-color: rgba(9, 56, 56, 0.9); /* Optional: Add a background color */
+        padding: 10px; /* Padding for better appearance */
+        margin-top: 5px; /* Space above the details */
+        border-radius: 5px; /* Rounded corners */
+        z-index: 10; /* Ensure it's above other content */
+    }
+
+    .feature-items:hover {
+        transform: none;
+        background-color: rgba(9, 56, 56, 0.096);
+    }
+}
+
+@media (max-width: 480px) {
+    .feature-items i {
+        font-size: 3.5rem; /* Further reduce icon size */
+    }
+
+    .feature-items h4 {
+        font-size: 1.2em; /* Further adjust heading size */
+    }
+
+    .feature-items p {
+        font-size: 0.9em; /* Further adjust paragraph size */
+    }
+
+    iframe {
+        height: 350px; /* Reduce height on smaller screens */
+    }
+
+    .google-location {
+        padding: 5px; /* Less padding on mobile */
+    }
+
+    .location h2 {
+        color: var(--highlight-color);
+        text-align: center;
+        font-size: 2.5em;
+    }
+}
+
+
+
+
+/* Our work */
+@media (max-width: 768px) {
+    .our-work {
+        padding: 20px 10px; /* Adjust padding for smaller screens */
+    }
+
+    .our-work h2 {
+        font-size: 2em; /* Smaller title size */
+        margin-bottom: 15px; /* Adjust margin */
+    }
+
+    .carousel {
+        overflow: hidden; /* Maintain hidden overflow for carousel */
+    }
+
+    .carousel-container {
+        display: flex; /* Keep flex layout */
+        width: 100%;
+    }
+
+    .work-item {
+        flex: 0 0 100%; /* Each item takes full width */
+        height: fit-content; /* Set a fixed height for consistency */
+    }
+
+    .work-item img {
+        width: 100%; /* Ensure images take full width */
+        height: 200px; /* Fixed height for images to maintain card size */
+        object-fit: scale-down; /* Cover to maintain aspect ratio without distortion */
+    }
+
+    .work-item h4 {
+        font-size: 1.3em; /* Smaller title size */
+        margin: 10px 0; /* Adjust margin */
+    }
+
+    .work-item p {
+        font-size: 0.9em; /* Smaller paragraph size */
+    }
+
+    button.prev, button.next {
+        font-size: 1.5em; /* Larger button size */
+        padding: 10px; /* Add padding for better touch targets */
+    }
+}
+
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .testimonial-container {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items */
+    }
+
+    blockquote {
+        margin: 10px 0; /* Adjust margin for stacked layout */
+        width: 90%; /* Make blockquotes full width */
+    }
+
+    .testimonials h2 {
+        font-size: 2em; /* Smaller title size on mobile */
+    }
+}
+
+
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .our-work h2, .about-us h2, .testimonials h2 {
+        font-size: 2em; /* Adjust heading size */
+    }
+
+    .work-gallery {
+        grid-template-columns: 1fr; /* Stack items on smaller screens */
+    }
+    
+    .footer-links {
+        flex-direction: column; /* Stack links on smaller screens */
+    }
+}

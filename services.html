@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile.css">
+    <title>Service</title>
+
+    <style>
+        .service-list {
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping for smaller screens */
+            justify-content: center; /* Space out items */
+        }
+
+        .service-item {
+            flex: 1 1 300px; /* Adjust width for responsiveness */
+            margin: 20px; /* Spacing around items */
+            text-align: center; /* Center text */
+        }
+
+        .service-image {
+            max-width: 100%; /* Responsive images */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 10px; /* Optional: rounded corners */
+        }
+
+        .services {
+            padding: 5px;
+            background-image: url("/images/black square portrait edit green.png");
+            background-color: rgba(0, 0, 0, 0.925); /* Lighter overlay */
+            background-size: cover; /* Ensure the background covers the section */
+            background-position: center; /* Center the background image */
+            width: fit-content;
+            position: relative; /* Allow stacking for potential overlays */
+        }
+
+
+
+        h3 {
+            color: #20e40e; /* Color for category headings */
+            margin-top: 20px;
+            font-size: 24px; /* Adjust size for emphasis */
+        }
+
+        ul {
+            list-style-type: none; /* Remove default list styling */
+            padding: 0; /* Remove padding */
+            margin: 10px 0; /* Margin for spacing */
+            display: none; /* Hide the details by default */
+            transition: max-height 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+            overflow: hidden; /* Hide overflow */
+            max-height: 0; /* Collapse height */
+            opacity: 0; /* Start invisible */
+        }
+
+        ul.show {
+            display: block; /* Show block when toggled */
+            max-height: 200px; /* Adjust as necessary for your content */
+            opacity: 1; /* Fade in */
+        }
+
+        li {
+            color: whitesmoke;
+            padding: 10px; /* Padding for list items */
+            margin: 5px 0; /* Margin for spacing between items */
+            border-radius: 5px; /* Rounded corners for list items */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        }
+
+        li:hover {
+            background: #e0f7fa17; /* Highlight color on hover */
+            transition: background 0.3s; /* Smooth transition for hover effect */
+        }
+
+        .details-toggle {
+            cursor: pointer; /* Indicate that this is clickable */
+            color: #20e40e; /* Match the category heading color */
+            margin-top: 10px; /* Space above the toggle */
+            background-color: #7c67672d;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: small;
+            display: inline-block; /* Center within the service item */
+            text-align: center; /* Center text */
+            width: fit-content; /* Full width to center properly */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="/images/mnszsite logo.png" alt="logo-image">
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="events.html">Events</a>
+                <a href="https://mnszsite.blogspot.com">Blog</a>
+                <a href="contact.html">Contact</a>
+                <a href="about.html">About</a>
+            </div>
+            <div class="burger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </nav>
+        <hr>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" style="height: fit-content;">
+        <div class="hero-content">
+            <h1>Empowering Your Business with Expert Services</h1>
+            <p>Explore our comprehensive range of solutions designed to elevate your business in the digital age.</p>
+            <a href="#services" class="cta-button">Discover Our Services</a>
+        </div>
+    </section>
+
+    <!-- About Our Services -->
+    <section class="about-us">
+        <h2>About Our Services</h2>
+        <p>At MnszSITE, we specialize in delivering tailored solutions that empower PNG's SMEs. Our comprehensive services, from IT support to web design, are designed to enhance your business’s efficiency and visibility in the digital landscape.</p>
+    </section>
+
+    <!-- Our Services Section -->
+    <main>
+        <section class="services">
+            <h2>Our Services</h2>
+            <div class="service-list">
+                <div class="service-item" id="phoneunlock">
+                    <img src="images/phoneunlock.avif " alt="Phone Unlocking" class="service-image">
+                    <h3>Phone Unlocking</h3>
+                    <p>Expert unlocking services for a variety of mobile devices.</p>
+                    <div class="details-toggle" onclick="toggleDetails(this)">Details</div>
+                    <ul>
+                        <li>Unlocking for all major brands</li>
+                        <li>Fast turnaround time</li>
+                        <li>Support for multiple device types</li>
+                    </ul>
+                </div>
+                <div class="service-item">
+                    <img src="images/it support2.jpg" alt="Basic IT Service" class="service-image">
+                    <h3>Basic IT Service</h3>
+                    <p>Comprehensive IT support for your everyday needs.</p>
+                    <div class="details-toggle" onclick="toggleDetails(this)">Details</div>
+                    <ul>
+                        <li>OS updates and installations</li>
+                        <li>Virus removal and protection</li>
+                        <li>Network setup and troubleshooting</li>
+                    </ul>
+                </div>
+                <div class="service-item">
+                    <img src="images/web design.jpg" alt="Web Design & Hosting" class="service-image">
+                    <h3>Web Design & Hosting</h3>
+                    <p>Creating responsive and user-friendly static websites with reliable hosting solutions.</p>
+                    <div class="details-toggle" onclick="toggleDetails(this)">Details</div>
+                    <ul>
+                        <li>Custom website designs</li>
+                        <li>SEO-friendly structures</li>
+                        <li>Ongoing maintenance and support</li>
+                    </ul>
+                </div>
+                <div class="service-item">
+                    <img src="images/graphic design.jpg" alt="Graphic Design" class="service-image">
+                    <h3>Graphic Design</h3>
+                    <p>Creative designs for your branding and marketing needs.</p>
+                    <div class="details-toggle" onclick="toggleDetails(this)">Details</div>
+                    <ul>
+                        <li>Logo and branding design</li>
+                        <li>Marketing materials (brochures, flyers)</li>
+                        <li>Social media graphics</li>
+                    </ul>
+                </div>
+                <div class="service-item">
+                    <img src="images/document.avif" alt="Professional Documentation" class="service-image">
+                    <h3>Professional Documentation</h3>
+                    <p>High-quality proposals and documents tailored to your needs.</p>
+                    <div class="details-toggle" onclick="toggleDetails(this)">Details</div>
+                    <ul>
+                        <li>Custom proposals</li>
+                        <li>Business documentation</li>
+                        <li>Technical writing services</li>
+                    </ul>
+                </div>
+                <div class="service-item">
+                    <img src="images/drive.jpg" alt="Cloud Sharing" class="service-image">
+                    <h3>Cloud Sharing</h3>
+                    <p>Rent secure drives for events; guests can upload and share photos easily.</p>
+                    <div class="details-toggle" onclick="toggleDetails(this)">Details</div>
+                    <ul>
+                        <li>Cloud backup solutions</li>
+                        <li>File synchronization services</li>
+                        <li>Collaboration tools for events</li>
+                    </ul>
+                </div>
+            </div>
+        </section> 
+        
+        <!-- Our Work Section -->
+    <section class="our-work">
+        <h2>Our Work</h2>
+        <div class="carousel">
+            <div class="carousel-container">
+                <div class="work-item">
+                    <img src="images/LIMA LogisticsAsset 13xxxhdpi.png" alt="Project 1">
+                    <h4>Lima Taxi Service</h4>
+                    <p>Web Design & Hosting | LogoDesign</p>
+                    <h4><a href="https://mnszsite.github.io/limataxiservice" target="_blank" style="display: inline-block; padding: 10px 20px; font-size: 16px; color: white; background-color: #077410; border: none; border-radius: 5px; text-decoration: none; text-align: center; transition: background-color 0.3s;">Visit: Lima Taxi Service </a></h4>
+                    
+                </div>
+                <div class="work-item">
+                    <img src="images/iveha electrical.png" alt="Project 2">
+                    <h4>Iveha Electrical</h4>
+                    <p>Web Design & Hosting</p>
+                    <h4><a href="https://mnszsite.github.io/ivehaelectrical" target="_blank" style="display: inline-block; padding: 10px 20px; font-size: 16px; color: white; background-color: #077410; border: none; border-radius: 5px; text-decoration: none; text-align: center; transition: background-color 0.3s;">Visit: Iveha Electrical </a></h4>
+                   
+                </div>
+                <div class="work-item">
+                    <img src="images/Konge Youths Foundation.jpg" alt="Project 3">
+                    <h4>Konge Youths Foundation</h4>
+                    <p>Logo Design, Proposal Write Ups, etc...</p>
+                    <h4><a href="https://www.facebook.com/profile.php?id=61554834902338" target="_blank" style="display: inline-block; padding: 10px 20px; font-size: 16px; color: white; background-color: #077410; border: none; border-radius: 5px; text-decoration: none; text-align: center; transition: background-color 0.3s;">Visit: Konge Youths Foundation </a></h4>
+                </div>
+                <div class="work-item">
+                    <img src="images/ALS SALES MARKETING AND BRANDING3.png" alt="Project 4">
+                    <h4>Als Sales Marketing | Branding</h4>
+                    <p>Logo Design</p>
+                </div>
+
+                <div class="work-item">
+                    <img src="images/winodws 11.png" alt="Project 5">
+                    <h4>Windows Installation </h4>
+                    <p>Installation and upgrade of windows 10 and 11</p>
+                </div>
+
+                <div class="work-item">
+                    <img src="images/Busu Youths.jpg" alt="Project 4">
+                    <h4>Logo Design</h4>
+                    <p>Logo Design For Busu Soccer Club Youths</p>
+                </div>
+
+                <div class="work-item">
+                    <img src="images/ALS SALES MARKETING AND BRANDING3.png" alt="Project 4">
+                    <h4>Als Sales Marketing | Branding</h4>
+                    <p>Logo Design</p>
+                </div>
+
+                <div class="work-item">
+                    <img src="images/Phone unlock.jpg" alt="Project 4">
+                    <h4>Phone Unlocking</h4>
+                    <p>Samsung Phone Google FRP Bypass</p>
+                </div>
+            </div>
+
+            <button class="prev" onclick="moveWorkSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveWorkSlide(1)">&#10095;</button>
+
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 MnszSITE. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+            <div class="contact-info">
+                <p><i class="fas fa-map-marker-alt"></i> Tent Siti, Lae, PNG</p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:mnszsite.aw@gmail.com">mnszsite.aw@gmail.com</a></p>
+                <p><i class="fas fa-phone-alt"></i> <a href="tel:+67570346861">70346861</a></p>
+            </div>
+            <div class="social-links">
+                <a href="https://facebook.comm/Mnszsite" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://wa.me/+67570346861" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://instagram.com/mnszsite" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://youtube.com/@MnszSITE" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://tiktok.com/@mnszsite" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://mnszsite.blogspot.com" target="_blank"><i class="fa-solid fa-blog"></i></a>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        function toggleDetails(element) {
+            const ul = element.nextElementSibling; // Get the next <ul> element
+            ul.classList.toggle('show'); // Toggle the 'show' class
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
