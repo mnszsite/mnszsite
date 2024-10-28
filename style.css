@@ -1,6 +1,6 @@
 :root {
-    --primary-bg: rgb(3, 49, 51);
-    --secondary-bg: rgb(6, 30, 34);
+    --primary-bg: rgb(1, 19, 20);
+    --secondary-bg: rgb(2, 16, 19);
     --highlight-color: #20e40e;
     --cta-bg: rgb(23, 136, 8);
     --cta-hover-bg: rgba(30, 133, 16, 0.205);
@@ -66,7 +66,7 @@ nav {
     background-image: url('images/black square portrait edit green.png'); /* Corrected image path */
     background-size: cover;
     background-position: center;
-    height: 80vh; /* Full viewport height */
+    height: fit-content; /* Full viewport height */
     display: flex;
     align-items: center; /* Center items vertically */
     justify-content: center; /* Center horizontally */
@@ -197,7 +197,7 @@ nav {
 }
 
 .service-item {
-    background-color: rgb(6, 26, 27); /* Background color */
+    background-color: rgb(4, 45, 48); /* Background color */
     border-radius: 10px; /* Rounded corners */
     padding: 20px; /* Inner padding */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow for depth */
@@ -268,12 +268,16 @@ nav {
    
 }
 
-
-
 .our-work h2 {
     font-size: 2.5em;
     color: var(--highlight-color);
     margin-bottom: 20px;
+}
+
+h3 {
+    color: #20e40e; /* Color for category headings */
+    margin-top: 20px;
+    font-size: 24px; /* Adjust size for emphasis */
 }
 
 .carousel .prev, .carousel .next {
@@ -305,7 +309,7 @@ nav {
 
 .work-item {
     flex: 0 0 100%; /* Each item takes full width of the carousel */
-    background-color: rgba(9, 56, 56, 0.6); /* Slightly transparent background */
+    background-color: rgba(8, 44, 46, 0.678); /* Background color */
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -328,17 +332,34 @@ nav {
     object-fit: scale-down; /* Cover to maintain aspect ratio without distortion */
     border-radius: 10px 10px 0 0; /* Rounded top corners */
 }
-
 .work-item h4 {
     margin: 15px 0 10px; /* Space above and below the title */
     font-size: 1.5em;
     color: var(--highlight-color);
+    text-decoration: none;
 }
+
+.work-item h4 a {
+    text-decoration: none;
+    color: whitesmoke;
+    background-color: rgb(4, 78, 4);
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.work-item h4 a:hover {
+    background-color: rgb(2, 150, 2); /* Change to a lighter green on hover */
+}
+
+
 
 .work-item p {
     color: var(--text-color);
     flex-grow: 1; /* Allow paragraph to take remaining space */
 }
+
+/* extracted from serice page */
 
 
 
@@ -488,22 +509,18 @@ input:focus, select:focus, textarea:focus, button:focus {
 }
 
 button {
-    background-color: var(--cta-bg); /* Button color */
+    background-color: green; /* Button color */
     color: whitesmoke;
     font-size: large;
     font-weight: bold;
     text-transform: uppercase;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+    
 }
 
 button:hover {
-    transform: scale(1.05); /* Slight scale effect on hover */
+    background-color: rgb(31, 207, 8); /* Change to your desired hover color */
 }
-
-
-
-
 
 
 /* Google Map Location */
@@ -862,6 +879,7 @@ footer {
     border-radius: 10px; /* Match the border radius of the container */
 }
 
+
 /* events page */
 h2 {
     text-align: center;
@@ -877,20 +895,15 @@ p {
     font-size: 1.1em;
     color: whitesmoke;
 }
-
 #photo-sharing {
     padding: 40px 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     margin: 20px auto;
     max-width: 1500px;
-}
-
-.qr-codes {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 3fr));
-    gap: 15px; /* Space between grid items */
-    padding: 20px; /* Padding around the grid */
+    display: grid; /* Enable grid layout */
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); /* Fluid columns */
+    gap: 20px; /* Space between grid items */
 }
 
 .qr-code {
@@ -932,6 +945,7 @@ p {
     height: auto;
     border-radius: 5px;
 }
+
 
 #feedback {
     margin: 30px auto;
@@ -999,5 +1013,4 @@ p {
 #instructions li {
     margin: 10px 0; /* Space between list items */
 }
-
 

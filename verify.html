@@ -7,6 +7,7 @@
     <script>
         let attempts = 0; // Variable to count attempts
         const maxAttempts = 5; // Maximum allowed attempts
+        let passwords = {}; // Object to hold passwords
 
         function getParameterByName(name) {
             const url = window.location.href;
@@ -17,7 +18,8 @@
         }
 
         function checkPassword() {
-            const correctPassword = getParameterByName('password'); // Correct password from URL
+            const drive = getParameterByName('drive'); // Get the drive parameter from URL
+            const correctPassword = passwords[drive]; // Get the correct password based on the drive
             const userPassword = prompt("Please enter the password to upload your photos:");
 
             // Check if the user clicked 'Cancel'
@@ -37,15 +39,23 @@
                     window.location.href = "events.html"; // Redirect to events page
                 } else {
                     alert("Incorrect password. You have " + (maxAttempts - attempts) + " attempts left.");
-                    // Optionally, you can ask for the password again
+                    // Ask for password again
                     checkPassword(); // Ask for password again
                 }
             }
         }
 
-
-        window.onload = checkPassword;
-
+        // Fetch passwords from JSON file
+        fetch('passwords.json')
+            .then(response => response.json())
+            .then(data => {
+                passwords = data; // Store passwords
+                checkPassword(); // Start password check
+            })
+            .catch(error => {
+                console.error('Error loading passwords:', error);
+                alert('Error loading passwords. Please try again later.');
+            });
     </script>
 </head>
 <body>
